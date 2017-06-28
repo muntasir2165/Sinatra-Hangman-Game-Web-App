@@ -73,7 +73,7 @@ class HangpersonApp < Sinatra::Base
   get '/win' do
     ### YOUR CODE HERE ###
     if session[:state].nil? #stop the user from going to the /win page directly without playing the game
-      redirect '/new'
+      redirect '/show'
     else
       session.delete(:state)
       erb :win # You may change/remove this line
@@ -83,7 +83,7 @@ class HangpersonApp < Sinatra::Base
   get '/lose' do
     ### YOUR CODE HERE ###
     if session[:state].nil? #stop the user from going to the /lose page directly without playing the game
-      redirect '/new'
+      redirect '/show'
     else
       session.delete(:state)
       erb :lose # You may change/remove this line
